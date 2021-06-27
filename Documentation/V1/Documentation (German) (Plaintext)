@@ -1,0 +1,113 @@
+MAHCPU Sprache - Dokumentation
+Infos:
+Jeder Wert kann auch der Wert einer Variable sein, wenn $ mit dem Variablennamen steht.
+
+Benenne bitte nichts „SYS_...“
+
+
+
+1) Variablen:
+
+1) Erstellung und Setzung:
+
+new_var
+new_var (Variablenname)
+Der Befehl new_var erstellt eine neue Variable im Speicher und setzt diese auf 0.
+
+set_var
+set_var (Variablenname) (Wert)
+Der Befehl set_var setzt eine Variable auf einen Wert.
+
+2) Mathematik:
+
+m_add_var
+m_add_var (Variablenname) (Wert)
+Der Befehl m_add_var setzt eine Variable auf das Ergebnis vom Wert der Variable + einem Wert.
+
+m_rem_var
+m_rem_var (Variablenname) (Wert)
+Der Befehl m_rem_var setzt eine Variable auf das Ergebnis vom Wert der Variable - einem Wert.
+
+3) Logik:
+
+m_and_var
+m_and_var (Variablenname) (Wert)
+Der Befehl m_and_var setzt eine Variable auf das Ergebnis von AND vom Wert der Variable und einem Wert.
+
+m_or_var
+m_or_var (Variablenname) (Wert)
+Der Befehl m_or_var setzt eine Variable auf das Ergebnis von OR vom Wert der Variable und einem Wert.
+
+m_not_var
+m_not_var (Variablenname)
+Der Befehl m_not_var setzt eine Variable auf das Ergebnis von NOT vom Wert der Variable
+
+
+
+2) I/O:
+
+1) VRAM:
+
+set_vram
+set_vram (Wert) (Wert)
+Der Befehl set_vram setzt ein Element des VRAMs auf einen Wert.
+Der VRAM besteht aus 3 Elementen pro Pixel (RGB). (Es beginnt bei 0)  
+Der Bildschirm besteht aus 100x100 Pixeln
+
+set_pixel
+set_pixel (Wert) (Wert) (Wert) (Wert)
+Der Befehl setzt einen Pixel auf dem VRAM auf die drei Werte (im RGB Format).
+(Der erste Wert, ist der Index. Der Index wird sollte beim R Index des Pixels sein => 2. Pixel => Index = 3(R Wert des Pixels))
+
+2) Bildschirm:
+
+print_scr
+print_scr
+Der Befehl print_scr kopiert alle Daten im VRAM auf den eigentlichen Bildschirm und zeigt somit das Bild an.
+
+draw_img
+draw_img (Dateipfad/Name)
+Der Befehl draw_img kopiert ein 100x100 Bitmap-Bild in den VRAM-Speicher und zeichnet es anschließend.
+
+
+3) Eingabe:
+
+inp
+inp (Variablenname)
+Der Befehl inp setzt eine Variable auf den Unicode Wert des eingegebenen Zeichens. Nach der Eingabe des Zeichens wird aber nicht gewartet und der nächste Befehl wird direkt ausgeführt.
+
+input
+input (Variablenname)
+Der Befehl input setzt eine Variable auf den Unicode Wert des eingegebenen Zeichens. Es wird gewartet, bis ein anderes Zeichen gedrückt wird.
+
+
+3) Jumps und If:
+
+1) Jumps:
+
+:
+: (Name)
+Definiert einen Jump-Punkt.
+Man kann mit jump zu diesem Punkt springen
+
+jump
+jump (Jumpname)
+Der Befehl jump springt zu einem Jump-Punkt.
+
+1) Ifs:
+
+if_jump 
+if_jump (Jumpname) (Variablenname)
+Der Befehl if_jump springt zu einem Jump-Punkt, wenn der Wert der Variable NICHT 0 ist.
+
+
+
+
+4) Debug:
+
+
+debug_prnt
+debug_prnt (Name)
+Der Befehl debug_prnt gibt den Wert einer Variable in der Konsole aus. (Da der CPU eigentlich keine Konsole hat, ist der Befehl nur für Emulatoren zum Testen geeignet!)
+
+
