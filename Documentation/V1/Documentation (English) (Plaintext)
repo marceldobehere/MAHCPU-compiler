@@ -1,0 +1,112 @@
+
+MAHCPU Language - Documentation
+Info:
+Any value can also be the value of a variable if $ is with the variable name.
+
+Please don't name anything "SYS_..."
+
+
+
+1) Variables:
+
+1) Creation and setting:
+
+new_var
+new_var (variable name)
+The new_var command creates a new variable in memory and sets it to 0.
+
+set_var
+set_var (variable name) (value)
+The set_var command sets a variable to a value.
+
+2) Mathematics:
+
+m_add_var
+m_add_var (variable name) (value)
+The m_add_var command sets a variable to the result of the value of the variable + a value.
+
+m_rem_var
+m_rem_var (Variable name) (Value)
+The m_rem_var command sets a variable to the result from the value of the variable - one value.
+
+3) Logic:
+
+m_and_var
+m_and_var (variable name) (value)
+The m_and_var command sets a variable to the result of AND from the value of the variable and a value.
+
+m_or_var
+m_or_var (Variable name) (Value)
+The m_or_var command sets a variable to the result of OR from the value of the variable and a value.
+
+m_not_var
+m_not_var (Variable name)
+The m_not_var command sets a variable to the result of NOT from the value of the variable.
+
+
+
+2) I/O:
+
+1) VRAM:
+
+set_vram
+set_vram (value) (value)
+The command set_vram sets an element of the VRAM to a value.
+The VRAM consists of 3 elements per pixel (RGB). (It starts at 0)  
+The screen consists of 100x100 pixels
+
+set_pixel
+set_pixel (value) (value) (value) (value)
+The command sets a pixel on the VRAM to the three values (in RGB format).
+(The first value, is the index. The index will be at the R index of the pixel => 2nd pixel => index = 3(R value of the pixel)).
+
+2) Screen:
+
+print_scr
+print_scr
+The print_scr command copies all the data in the VRAM to the actual screen, thus displaying the image.
+
+draw_img
+draw_img (file path/name)
+The draw_img command copies a 100x100 bitmap image into VRAM memory and then draws it.
+
+
+3) Input:
+
+inp
+inp (variable name)
+The command inp sets a variable to the Unicode value of the entered character. After entering the character, however, the program does not wait and the next command is executed directly.
+
+input
+input (variable name)
+The command input sets a variable to the Unicode value of the entered character. It waits until another character is pressed.
+
+
+3) Jumps and If:
+
+1) Jumps:
+
+:
+: (name)
+Defines a jump point.
+You can jump to this point with jump
+
+jump
+jump (Jump name)
+The jump command jumps to a jump point.
+
+1) Ifs:
+
+if_jump 
+if_jump (Jumpname) (Variable name)
+The if_jump command jumps to a jump point if the value of the variable is NOT 0.
+
+
+
+
+4) Debug:
+
+
+debug_prnt
+debug_prnt (name)
+The debug_prnt command prints the value of a variable to the console. (Since the CPU actually has no console, the command is only suitable for emulators for testing!)
